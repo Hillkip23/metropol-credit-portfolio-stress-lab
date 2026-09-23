@@ -1,0 +1,7 @@
+priority,risk_signal,recommended_action,primary_owner
+1,Highest severe-stress loss concentration: Trade,"Perform sector-specific portfolio review; assess limits, risk appetite, collateral coverage, collections capacity, and early-warning thresholds for the segment.",Credit Risk / Portfolio Management
+2,Highest severe-stress product loss concentration: SME Term Loan,"Review underwriting, repricing, exposure caps, renewal criteria, and vintage performance for the product.",Credit Risk / Product / Collections
+3,Highest score-band loss concentration: Subprime,"Prioritize behavioural monitoring, affordability review, early engagement, and collections treatment strategies for vulnerable score bands.",Credit Risk / Collections
+4,Top-25 watchlist contains 84.0% variable-rate accounts.,Assess affordability and payment-shock sensitivity for variable-rate borrowers; consider proactive outreach or restructured-payment options where policy permits.,Portfolio Management / Collections
+5,Top-25 watchlist contains 48.0% FX-exposed accounts.,"Review FX sensitivity, foreign-currency cash-flow buffers, and sector concentration among exposed borrowers.",Credit Risk / Treasury / Relationship Teams
+6,Scenario stress causes material Stage 1 to Stage 2/3 migration in the illustrative portfolio.,"Establish monthly early-warning reporting and model governance to track deterioration, scenario outcomes, and management actions.",CRO / Finance / Model Risk
