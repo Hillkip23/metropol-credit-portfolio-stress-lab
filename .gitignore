@@ -36,3 +36,8 @@ Thumbs.db
 
 # Optional: do not publish commercial presentation documents
 docs/*.pptx
+
+# Local Streamlit configuration backups
+.streamlit/*.backup
+# Local Streamlit configuration backups
+.streamlit/*.backup
