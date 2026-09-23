@@ -15,11 +15,8 @@ __pycache__/
 
 # Licensed, source, and non-public analytical data
 /data/raw/*
-!/data/raw/.gitkeep
 /data/processed/*
-!/data/processed/.gitkeep
 /data/outputs/*
-!/data/outputs/.gitkeep
 *.parquet
 *.feather
 *.pkl
@@ -66,3 +63,12 @@ docs/*.pptx
 *.syntax_backup
 *.tmp
 *.temp
+# Local-only project materials not included in the deployable demo
+/analytics/
+/dashboard/
+/app_legacy.py
+/streamlit_app_legacy.py
+/data/asset_universe.csv
+/docs/.gitkeep
+/docs/Tokim_Metropol_Portfolio_Resilience_Concept_Paper.md
+/docs/metropol_portfolio_resilience_discussion_note.md
