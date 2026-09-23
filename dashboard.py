@@ -13,7 +13,7 @@ PROCESSED_DIR = PROJECT_ROOT / "data" / "demo"
 
 st.set_page_config(
     page_title="Portfolio Resilience & Scenario Stress Module",
-    page_icon="ðŸ“‰",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -21,8 +21,8 @@ st.set_page_config(
 DISCLAIMER = """
 **Illustrative sandbox demonstrator.** The portfolio and scenario parameters
 shown here are synthetic and are used only to demonstrate the workflow:
-scenario design â†’ portfolio stress sensitivity â†’ concentration analysis â†’
-early-warning prioritisation â†’ management action.
+scenario design -> portfolio stress sensitivity -> concentration analysis ->
+early-warning prioritisation -> management action.
 
 A client implementation would be calibrated using governed, pseudonymized
 lender and permitted credit-information-sharing data, Kenya-relevant
@@ -108,7 +108,7 @@ def get_scenario_row(
 
 def format_kes(value: float) -> str:
     if pd.isna(value):
-        return "â€”"
+        return "-"
 
     absolute_value = abs(value)
 
@@ -126,7 +126,7 @@ def format_kes(value: float) -> str:
 
 def format_percent(value: float) -> str:
     if pd.isna(value):
-        return "â€”"
+        return "-"
 
     return f"{value:,.1f}%"
 
@@ -162,7 +162,7 @@ def style_currency_table(
 
     return frame.style.format(
         formatting,
-        na_rep="â€”",
+        na_rep="-",
     )
 
 
@@ -697,7 +697,7 @@ def render_migration(
     )
 
     st.info(
-        "Illustrative Stage 1 â†’ Stage 3 and Stage 2 â†’ Stage 3 migration "
+        "Illustrative Stage 1 -> Stage 3 and Stage 2 -> Stage 3 migration "
         f"together account for {combined_share:.1f}% of incremental ECL. "
         "This is why scenario analysis can complement static delinquency "
         "monitoring and current-state reporting."
@@ -797,7 +797,7 @@ def render_watchlist(
                 ).mean()
             )
             if not filtered.empty
-            else "â€”"
+            else "-"
         ),
     )
 
@@ -809,7 +809,7 @@ def render_watchlist(
                 * filtered["fx_exposed"].astype(bool).mean()
             )
             if not filtered.empty
-            else "â€”"
+            else "-"
         ),
     )
 
@@ -911,7 +911,7 @@ def render_watchlist(
     st.info(
         "In a Metropol or lender sandbox, this view would be a "
         "pseudonymized worklist. It would support human review and "
-        "prioritisationâ€”not automated decisions about any borrower."
+        "prioritisation - not automated decisions about any borrower."
     )
 
 
@@ -973,18 +973,27 @@ def render_methodology(
         """
 ```text
 Global and domestic market / macroeconomic stress signals
-    â”œâ”€ uncertainty and downside-risk indicators
-    â”œâ”€ interest-rate, FX, inflation and sector conditions
-    â”œâ”€ portfolio score movement and payment behaviour
-    â””â”€ delinquency, utilisation and borrower-change signals
-                    â†“
+  - Uncertainty and downside-risk indicators
+  - Interest-rate, FX, inflation and sector conditions
+  - Portfolio score movement and payment behaviour
+  - Delinquency, utilisation and borrower-change signals
+
+          |
+          v
+
 Scenario severity and governance
-                    â†“
+
+          |
+          v
+
 Portfolio sensitivity analysis
-    â”œâ”€ PD / roll-rate and stage-migration sensitivity
-    â”œâ”€ ECL and exposure sensitivity
-    â””â”€ sector, product, region and score-band concentration
-                    â†“
+  - PD, roll-rate and stage-migration sensitivity
+  - ECL and exposure sensitivity
+  - Sector, product, region and score-band concentration
+
+          |
+          v
+
 Early-warning worklist and accountable management actions
 ```
 """
@@ -1107,7 +1116,7 @@ Early-warning worklist and accountable management actions
 
 - Loss-concentration visibility
 - Earlier risk escalation
-- Better collection prioritisation
+- Better collections prioritisation
 - Practical action adoption
 """
     )
@@ -1180,4 +1189,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 

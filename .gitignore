@@ -1,8 +1,10 @@
 ﻿# Python environments and cache
 .venv/
 venv/
+env/
 __pycache__/
 *.py[cod]
+*$py.class
 
 # Credentials and local configuration
 .env
@@ -11,7 +13,7 @@ __pycache__/
 .pgpass
 .streamlit/secrets.toml
 
-# Licensed WRDS extracts and generated analytics outputs
+# Licensed, source, and non-public analytical data
 /data/raw/*
 !/data/raw/.gitkeep
 /data/processed/*
@@ -19,25 +21,48 @@ __pycache__/
 /data/outputs/*
 !/data/outputs/.gitkeep
 *.parquet
+*.feather
+*.pkl
+*.pickle
+
+# Keep only the deliberately selected synthetic dashboard inputs deployable
+# Note: data/demo/*.csv is intentionally NOT ignored.
 
 # Editor and operating-system files
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# Logs
+# Logs, test coverage, and build artefacts
 *.log
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+build/
+dist/
+*.egg-info/
 
+# Jupyter notebooks and local checkpoints
+.ipynb_checkpoints/
 
 # Microsoft Office temporary / lock files
 ~$*.pptx
 ~$*.docx
+~$*.xlsx
 
-# Optional: do not publish commercial presentation documents
+# Do not publish commercial presentation documents
+# Markdown source documents remain local unless deliberately added.
 docs/*.pptx
 
 # Local Streamlit configuration backups
 .streamlit/*.backup
-# Local Streamlit configuration backups
-.streamlit/*.backup
+
+# Local code-repair and backup files
+*.backup
+*.before_text_fix
+*.syntax_backup
+*.tmp
+*.temp
